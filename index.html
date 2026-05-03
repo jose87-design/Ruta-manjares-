@@ -1,300 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ruta de Manjares · Coronación de Carlos V | Feria Renacentista de Tarazona</title>
-  <meta name="description" content="Ruta de Manjares de la Coronación de Carlos V en la Feria Renacentista de Tarazona. Programa del 10 de mayo, mercado renacentista y propuestas gastronómicas." />
-  <meta name="theme-color" content="#4b120f" />
-  <meta property="og:title" content="Ruta de Manjares · Coronación de Carlos V" />
-  <meta property="og:description" content="Sabores históricos, mercado renacentista y programa especial en Tarazona." />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=IM+Fell+English:ital@0;1&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --wine:#4b120f;
-      --wine-2:#6f1d18;
-      --gold:#c79a3a;
-      --gold-2:#e6c979;
-      --ink:#24120d;
-      --muted:#6e5648;
-      --paper:#f8efd9;
-      --paper-2:#fff8ea;
-      --line:rgba(108,71,35,.22);
-      --shadow:0 20px 60px rgba(49,18,12,.22);
-      --radius:24px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      color:var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(199,154,58,.22), transparent 28rem),
-        radial-gradient(circle at 90% 10%, rgba(111,29,24,.16), transparent 30rem),
-        linear-gradient(180deg, #fff8eb 0%, #f5e2bd 100%);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
-      overflow-x:hidden;
-    }
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      opacity:.18;
-      mix-blend-mode:multiply;
-      background-image:
-        linear-gradient(90deg, rgba(70,35,20,.08) 1px, transparent 1px),
-        linear-gradient(rgba(70,35,20,.08) 1px, transparent 1px);
-      background-size:42px 42px;
-      mask-image:linear-gradient(to bottom, #000, transparent 80%);
-      z-index:-2;
-    }
-    body::after{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      opacity:.22;
-      background:
-        repeating-linear-gradient(0deg, rgba(107,67,34,.09) 0 1px, transparent 1px 4px),
-        radial-gradient(circle at 50% 20%, transparent 0, rgba(66,31,16,.08) 62%);
-      z-index:-1;
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{width:min(1180px, calc(100% - 32px)); margin-inline:auto}
-    .skip{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip:focus{left:16px;top:16px;width:auto;height:auto;padding:10px 14px;background:#fff;border-radius:10px;z-index:1000}
-    header{
-      position:sticky;
-      top:0;
-      z-index:100;
-      border-bottom:1px solid rgba(75,18,15,.18);
-      backdrop-filter:blur(16px);
-      background:rgba(255,248,234,.84);
-    }
-    .nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:12px;font-family:Cinzel,serif;color:var(--wine);font-weight:900;letter-spacing:.03em}
-    .crest{
-      width:48px;height:48px;display:grid;place-items:center;border-radius:14px;
-      background:linear-gradient(145deg,var(--wine),#280806);
-      color:var(--gold-2);border:1px solid rgba(230,201,121,.72);
-      box-shadow:0 10px 24px rgba(75,18,15,.28), inset 0 0 0 2px rgba(255,255,255,.08);
-      font-size:25px;
-    }
-    .brand span{display:block;line-height:1.04}.brand small{font-family:Inter,sans-serif;font-weight:800;font-size:.72rem;color:#8d5d21;letter-spacing:.18em;text-transform:uppercase}
-    .links{display:flex;align-items:center;gap:18px;font-weight:800;font-size:.94rem;color:#3b241a}.links a{padding:10px 10px;border-radius:999px}.links a:hover{background:rgba(199,154,58,.15);color:var(--wine)}
-    .menu-btn{display:none;border:1px solid var(--line);background:#fff8ea;border-radius:12px;padding:10px 12px;font-weight:900;color:var(--wine)}
-    .hero{padding:76px 0 42px;position:relative}
-    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
-    .kicker{display:inline-flex;align-items:center;gap:9px;padding:9px 14px;border-radius:999px;background:linear-gradient(135deg,var(--wine),#741a16);color:var(--gold-2);font-weight:900;box-shadow:0 8px 24px rgba(75,18,15,.22);border:1px solid rgba(230,201,121,.52)}
-    h1{font-family:Cinzel,serif;font-size:clamp(2.5rem,7vw,6.25rem);line-height:.91;margin:22px 0 18px;color:var(--wine);letter-spacing:-.06em;text-wrap:balance;text-shadow:0 2px 0 rgba(255,255,255,.6)}
-    .lead{font-family:"IM Fell English",serif;font-size:clamp(1.25rem,2.4vw,1.85rem);line-height:1.25;color:#6a351a;max-width:780px;margin:0 0 14px}
-    .sublead{font-size:1.05rem;line-height:1.68;color:#4f372d;max-width:680px;margin:0 0 26px}
-    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:14px;padding:15px 21px;font-weight:950;letter-spacing:.02em;border:1px solid rgba(75,18,15,.22);box-shadow:0 14px 32px rgba(75,18,15,.18);transition:.2s ease}.btn.primary{background:linear-gradient(135deg,var(--wine),var(--wine-2));color:#fff4cf;border-color:rgba(230,201,121,.55)}.btn.secondary{background:rgba(255,248,234,.82);color:var(--wine)}.btn:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(75,18,15,.25)}
-    .portrait{position:relative;min-height:560px;border-radius:calc(var(--radius) + 10px);overflow:hidden;border:1px solid rgba(108,71,35,.25);background:linear-gradient(145deg,rgba(255,249,235,.75),rgba(228,202,150,.55));box-shadow:var(--shadow)}
-    .portrait::before{content:"";position:absolute;inset:18px;border:1px solid rgba(199,154,58,.45);border-radius:28px}.portrait::after{content:"CAROLVS V";position:absolute;right:30px;bottom:28px;width:128px;height:128px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#8b251e,#3a0c09 64%);color:var(--gold-2);display:grid;place-items:center;text-align:center;font-family:Cinzel,serif;font-weight:900;letter-spacing:.08em;border:4px double var(--gold);box-shadow:0 14px 36px rgba(75,18,15,.4)}
-    .king{position:absolute;inset:0;display:grid;place-items:center;padding:42px}.king svg{width:92%;max-width:430px;filter:drop-shadow(0 18px 22px rgba(67,33,17,.2))}.tower{position:absolute;left:22px;bottom:18px;opacity:.25;font-family:Cinzel,serif;font-size:7rem;line-height:.8;color:var(--wine);writing-mode:vertical-rl;transform:rotate(180deg)}
-    .info-band{margin:24px auto 26px;background:linear-gradient(135deg,#55130f,#7a1d17);color:#fff3cf;border:1px solid rgba(230,201,121,.55);box-shadow:var(--shadow);border-radius:28px;padding:22px;position:relative;overflow:hidden}.info-band::before,.info-band::after{content:"✦";position:absolute;color:rgba(230,201,121,.28);font-size:9rem;top:-42px}.info-band::before{left:18px}.info-band::after{right:18px}.info-content{position:relative;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.info-content strong{font-family:Cinzel,serif;color:var(--gold-2);font-size:1.45rem}.info-content span{color:#f7e5bd;line-height:1.55}
-    section{padding:54px 0}.section-title{text-align:center;margin-bottom:28px}.section-title .orn{font-size:1.4rem;color:var(--gold);letter-spacing:.2em}.section-title h2{font-family:Cinzel,serif;color:var(--wine);font-size:clamp(2rem,4vw,3.25rem);line-height:1;margin:8px 0 8px}.section-title p{margin:0 auto;max-width:760px;line-height:1.65;color:var(--muted)}
-    .timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;position:relative}.time-card{background:rgba(255,248,234,.82);border:1px solid var(--line);border-radius:22px;padding:18px 14px;box-shadow:0 12px 30px rgba(75,18,15,.09);min-height:178px;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:flex-start;gap:10px}.time{font-weight:950;color:var(--wine)}.icon{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#a96d22,var(--gold-2));color:#46100c;border:2px solid rgba(75,18,15,.18);font-size:1.35rem;box-shadow:inset 0 2px 4px rgba(255,255,255,.45)}.time-card p{margin:0;font-size:.93rem;line-height:1.35;font-weight:700;color:#3b241a}
-    .controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:24px}.chip{border:1px solid rgba(75,18,15,.2);background:rgba(255,248,234,.86);color:#4a2118;border-radius:999px;padding:11px 15px;font-weight:900;cursor:pointer}.chip.active,.chip:hover{background:linear-gradient(135deg,var(--wine),var(--wine-2));color:#fff4cf;border-color:rgba(230,201,121,.55)}
-    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.dish-card{position:relative;background:rgba(255,250,238,.86);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 14px 28px rgba(75,18,15,.09);overflow:hidden;transition:.22s ease}.dish-card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(199,154,58,.14),transparent 44%);pointer-events:none}.dish-card:hover{transform:translateY(-4px);box-shadow:0 22px 40px rgba(75,18,15,.17)}.dish-top{display:flex;align-items:center;gap:12px;position:relative}.dish-mark{width:46px;height:46px;border-radius:13px;background:linear-gradient(145deg,#651510,#2d0907);display:grid;place-items:center;color:var(--gold-2);font-size:1.35rem;border:1px solid rgba(230,201,121,.55);flex:0 0 auto}.dish-card h3{font-family:Cinzel,serif;font-size:1.02rem;line-height:1.1;margin:0;color:var(--wine)}.dish-card p{position:relative;margin:12px 0 0;line-height:1.42;color:#463028;font-weight:650}.tag{display:inline-flex;margin-top:14px;font-size:.78rem;font-weight:900;color:#8a5d1f;background:rgba(199,154,58,.13);border:1px solid rgba(199,154,58,.28);border-radius:999px;padding:6px 9px}
-    .visit{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}.visit-card{background:rgba(255,248,234,.82);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 14px 34px rgba(75,18,15,.1)}.visit-card h3{margin:0 0 8px;font-family:Cinzel,serif;color:var(--wine)}.visit-card p{margin:0;color:var(--muted);line-height:1.55}.mapbox{grid-column:span 3;position:relative;min-height:280px;border-radius:28px;overflow:hidden;border:1px solid rgba(108,71,35,.25);background:linear-gradient(135deg,rgba(75,18,15,.9),rgba(111,29,24,.78)),radial-gradient(circle at top right,rgba(230,201,121,.35),transparent 42%);color:#fff4cf;display:grid;place-items:center;text-align:center;padding:28px}.mapbox h3{font-family:Cinzel,serif;font-size:2rem;margin:0 0 12px;color:var(--gold-2)}.mapbox p{max-width:720px;margin:0 auto 22px;line-height:1.65}.mapbox .btn{background:#fff4cf;color:var(--wine)}
-    .cta{padding:38px 0 70px}.cta-box{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(255,248,234,.92),rgba(240,214,164,.72));border:1px solid rgba(108,71,35,.28);border-radius:34px;padding:34px;text-align:center;box-shadow:var(--shadow)}.cta-box h2{font-family:Cinzel,serif;color:var(--wine);font-size:clamp(1.9rem,4vw,3.4rem);line-height:1;margin:0 0 10px}.cta-box p{margin:0 auto 24px;max-width:760px;color:#5c4032;line-height:1.65}.seal-mini{position:absolute;left:28px;top:26px;width:78px;height:78px;border-radius:50%;background:radial-gradient(circle,#8d211b,#390b08);border:3px double var(--gold);color:var(--gold-2);display:grid;place-items:center;font-family:Cinzel,serif;font-weight:900;box-shadow:0 18px 36px rgba(75,18,15,.25)}
-    footer{background:linear-gradient(135deg,#3a0c09,#5c130f);color:#f8e7bd;padding:30px 0;border-top:1px solid rgba(230,201,121,.42)}.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.foot strong{font-family:Cinzel,serif;color:var(--gold-2)}.foot small{color:#e2c892}.toplink{border:1px solid rgba(230,201,121,.35);border-radius:999px;padding:10px 13px;font-weight:900;color:#fff4cf}
-    .floating{position:fixed;right:18px;bottom:18px;z-index:90}.floating .btn{padding:13px 16px;border-radius:999px}
-    @media(max-width:960px){.hero-grid{grid-template-columns:1fr}.portrait{min-height:430px}.timeline{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:repeat(2,1fr)}.visit{grid-template-columns:1fr}.mapbox{grid-column:auto}.links{display:none;position:absolute;left:16px;right:16px;top:82px;background:#fff8ea;border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}.links.open{display:flex}.menu-btn{display:inline-flex}.seal-mini{display:none}}
-    @media(max-width:620px){.wrap{width:min(100% - 22px, 1180px)}.nav{height:66px}.brand small{display:none}.crest{width:42px;height:42px}.hero{padding:46px 0 26px}h1{font-size:clamp(2.45rem,14vw,4.8rem)}.actions .btn{width:100%}.portrait{min-height:330px}.portrait::after{width:96px;height:96px;font-size:.82rem}.timeline{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.dish-card{padding:16px}.info-content{display:block}.info-content span{display:block;margin-top:8px}.floating{display:none}.cta-box{padding:26px 18px}.tower{font-size:4.5rem}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.dish-card{transition:none}.btn:hover,.dish-card:hover{transform:none}}
-  </style>
-</head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feria Renacentista de Tarazona 2026 · Ruta de Manjares</title>
+<meta name="description" content="Feria Renacentista de Tarazona 2026: Ruta de Manjares, programa del 9 y 10 de mayo, cabalgata imperial, visitas, rutas y actividades de la Coronación de Carlos V.">
+<meta name="theme-color" content="#74051f">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Inter:wght@400;600;800;900&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--b:#74051f;--b2:#3b0612;--g:#c6a052;--g2:#ecd390;--p:#fff5df;--ink:#24110c;--mut:#735a49;--line:rgba(116,5,31,.18);--sh:0 26px 70px rgba(62,8,19,.24);--c:#23e6ff;--v:#8cff63}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Inter,system-ui,sans-serif;background:radial-gradient(circle at 8% 0,rgba(198,160,82,.28),transparent 28rem),radial-gradient(circle at 90% 10%,rgba(116,5,31,.18),transparent 28rem),linear-gradient(#fff8e8,#f2d6a6)}body:before{content:"";position:fixed;inset:0;z-index:-1;opacity:.16;background-image:linear-gradient(90deg,rgba(74,23,13,.14) 1px,transparent 1px),linear-gradient(rgba(74,23,13,.12) 1px,transparent 1px);background-size:42px 42px}.wrap{width:min(1180px,calc(100% - 32px));margin:auto}a{color:inherit;text-decoration:none}header{position:sticky;top:0;z-index:10;background:rgba(255,245,223,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:12px;font-family:Cinzel,serif;font-weight:900;color:var(--b)}.crest{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,var(--b),#27030a);color:var(--g2);box-shadow:0 12px 28px rgba(116,5,31,.28);border:1px solid rgba(236,211,144,.65)}.brand small{display:block;font-family:Inter,sans-serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#9b6d2a}.links{display:flex;gap:8px;font-weight:900}.links a{padding:10px 12px;border-radius:999px}.links a:hover{background:rgba(198,160,82,.16);color:var(--b)}.menu{display:none;border:1px solid var(--line);background:#fff6e5;color:var(--b);font-weight:900;border-radius:13px;padding:10px 12px}.hero{overflow:hidden;position:relative;background:linear-gradient(135deg,var(--b),#67041b 52%,var(--b2));color:#fff7df}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 76% 18%,rgba(236,211,144,.22),transparent 26rem),radial-gradient(circle at 15% 90%,rgba(255,255,255,.08),transparent 25rem)}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;padding:74px 0}.eyebrow{display:inline-flex;padding:9px 14px;border-radius:999px;border:1px solid rgba(236,211,144,.42);color:var(--g2);font-weight:900;background:rgba(255,255,255,.08)}.feria{font-family:Cinzel,serif;font-size:clamp(1.7rem,3.5vw,3.5rem);font-weight:900;letter-spacing:.45em;margin-top:22px}.rena{font-family:UnifrakturCook,Cinzel,serif;font-size:clamp(3.7rem,10vw,8rem);line-height:.8;color:var(--g2);text-shadow:0 5px 0 rgba(0,0,0,.13)}h1{font-family:Cinzel,serif;font-size:clamp(2.15rem,5.2vw,5rem);line-height:.95;margin:16px 0;text-wrap:balance}.hero p{max-width:720px;line-height:1.7;color:#f2dfc0;font-size:1.05rem}.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:26px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:16px;padding:15px 20px;border:1px solid rgba(236,211,144,.42);font-weight:950;box-shadow:0 16px 32px rgba(62,8,19,.22);transition:.2s}.btn:hover{transform:translateY(-2px)}.primary{background:linear-gradient(135deg,var(--g2),#b8852a);color:#3e0b09}.secondary{background:rgba(255,255,255,.08);color:#fff7df}.poster{min-height:520px;border-radius:38px;background:linear-gradient(145deg,rgba(255,246,220,.95),rgba(228,191,124,.76));border:1px solid rgba(236,211,144,.55);box-shadow:var(--sh);padding:28px;color:#2b110b;position:relative;overflow:hidden}.poster:before{content:"";position:absolute;inset:16px;border:1px solid rgba(116,5,31,.2);border-radius:28px}.poster>*{position:relative}.poster-top{text-align:right;font-family:Cinzel,serif;font-weight:900;letter-spacing:.16em;color:var(--b)}.seal{margin:30px auto 18px;width:min(290px,80%);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 35% 20%,#9d1735,var(--b) 56%,#25030a);color:var(--g2);border:6px double var(--g);box-shadow:0 22px 50px rgba(62,8,19,.28);font-family:Cinzel,serif}.seal b{font-size:5rem;line-height:.85}.poster-list{display:grid;gap:10px;font-weight:900}.poster-list span{display:flex;gap:9px;align-items:center}.poster-list i{width:9px;height:9px;border-radius:99px;background:var(--b)}.quick{margin-top:-38px;position:relative;z-index:2}.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.q{background:rgba(255,246,226,.92);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 18px 42px rgba(62,8,19,.13)}.q strong{display:block;color:var(--b);font-family:Cinzel,serif;margin-bottom:6px}.q span{color:var(--mut);font-weight:700;line-height:1.45}section{padding:64px 0}.title{text-align:center;margin-bottom:28px}.title .orn{color:var(--g);letter-spacing:.22em;font-weight:900}.title h2{font-family:Cinzel,serif;color:var(--b);font-size:clamp(2rem,4.5vw,3.55rem);line-height:.98;margin:8px 0}.title p{max-width:780px;margin:auto;color:var(--mut);font-weight:650;line-height:1.7}.band{background:linear-gradient(135deg,var(--b),#4a0615);color:#fff4d3;padding:22px;border-radius:26px;border:1px solid rgba(236,211,144,.28);box-shadow:var(--sh)}.band strong{font-family:Cinzel,serif;color:var(--g2);font-size:1.2rem}.band span{color:#f4dfbd}.tabs,.chips{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:20px}.tab,.chip{border:1px solid var(--line);background:#fff6e5;color:var(--b);font-weight:950;border-radius:999px;padding:12px 15px;cursor:pointer}.active{background:linear-gradient(135deg,var(--b),#4d0716)!important;color:#fff4d3!important;border-color:rgba(236,211,144,.5)!important}.panel{background:rgba(255,245,223,.78);border:1px solid var(--line);border-radius:28px;box-shadow:0 18px 54px rgba(62,8,19,.11);padding:16px}.program{display:grid;gap:12px}.event{display:grid;grid-template-columns:120px 1fr;gap:14px;background:rgba(255,248,232,.88);border:1px solid var(--line);border-radius:18px;padding:15px}.hour{font-weight:950;color:var(--b)}.event h3{margin:0 0 4px}.event p{margin:0;color:#63483b;line-height:1.5;font-weight:650}.feature{background:linear-gradient(135deg,rgba(116,5,31,.96),rgba(72,7,20,.93));color:#fff4d3;border-color:rgba(236,211,144,.42)}.feature h3,.feature .hour{color:var(--g2)}.feature p{color:#f4dfbd}.map-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}.map{min-height:410px;border-radius:28px;position:relative;overflow:hidden;border:1px solid var(--line);background:linear-gradient(135deg,#f8e8c5,#d3a861);box-shadow:0 20px 58px rgba(62,8,19,.14)}.map:before{content:"PLANO DE LA FIESTA";position:absolute;left:22px;top:22px;font-family:Cinzel,serif;font-weight:900;color:var(--b);letter-spacing:.08em}.street{position:absolute;background:rgba(116,5,31,.15);border-radius:999px}.s1{left:10%;top:55%;width:80%;height:18px;transform:rotate(-18deg)}.s2{left:42%;top:10%;width:18px;height:80%;transform:rotate(16deg)}.s3{left:18%;top:28%;width:62%;height:14px;transform:rotate(32deg)}.pin{position:absolute;width:34px;height:34px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:grid;place-items:center;background:var(--b);border:2px solid var(--g2);box-shadow:0 12px 22px rgba(62,8,19,.28)}.pin b{transform:rotate(45deg);color:#fff8df}.p1{left:58%;top:22%}.p2{left:64%;top:30%}.p3{left:76%;top:47%}.p4{left:58%;top:56%}.p5{left:50%;top:72%}.p6{left:38%;top:39%}.p7{left:42%;top:52%}.p8{left:24%;top:68%}.places{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.place,.card,.dish{background:rgba(255,248,232,.9);border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:0 14px 34px rgba(62,8,19,.08)}.place{display:flex;gap:12px}.num{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;background:var(--b);color:#fff4d3;font-weight:950;flex:0 0 auto}.place h3,.card h3,.dish h3{font-family:Cinzel,serif;color:var(--b);margin:0 0 5px}.place p,.card p,.card li,.dish p{color:#60473a;line-height:1.5;font-weight:650}.tools{display:grid;grid-template-columns:1fr auto;gap:12px;margin-bottom:18px}.search{width:100%;border:1px solid var(--line);border-radius:16px;background:#fff8e8;padding:14px 16px;outline:none}.search:focus{border-color:var(--g);box-shadow:0 0 0 4px rgba(198,160,82,.18)}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.dish{position:relative;overflow:hidden;transition:.18s}.dish:hover{transform:translateY(-3px);box-shadow:0 22px 44px rgba(62,8,19,.15)}.topdish{display:flex;gap:12px;align-items:center}.mark{width:44px;height:44px;border-radius:14px;background:linear-gradient(145deg,var(--b),#2d030b);color:var(--g2);display:grid;place-items:center;border:1px solid rgba(236,211,144,.55);font-size:1.25rem;flex:0 0 auto}.dish em{display:inline-flex;margin-top:12px;color:#8a631e;background:rgba(198,160,82,.13);border:1px solid rgba(198,160,82,.28);border-radius:999px;padding:6px 9px;font-style:normal;font-size:.78rem;font-weight:950}.empty{display:none;text-align:center;padding:24px;color:var(--mut);font-weight:800}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card ul{padding-left:18px}.cta{padding-bottom:74px}.cta-box{text-align:center;border-radius:34px;background:linear-gradient(135deg,var(--b),#4c0616);color:#fff5d9;padding:38px;border:1px solid rgba(236,211,144,.38);box-shadow:var(--sh)}.cta-box h2{font-family:Cinzel,serif;color:var(--g2);font-size:clamp(2rem,4vw,3.4rem);line-height:1;margin:0 0 10px}.cta-box p{max-width:760px;margin:0 auto 24px;color:#f4dfbd;line-height:1.65;font-weight:650}footer{background:#12060a;color:#f3dfb8;border-top:1px solid rgba(236,211,144,.22);padding:30px 0}.foot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot strong{font-family:Cinzel,serif;color:var(--g2)}.chispa{display:flex;align-items:center;gap:10px;padding:10px 13px;border-radius:18px;background:linear-gradient(135deg,rgba(35,230,255,.1),rgba(140,255,99,.08));border:1px solid rgba(35,230,255,.25)}.spark{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 36% 30%,#fff,var(--c) 34%,var(--v) 70%,transparent 71%);box-shadow:0 0 18px rgba(35,230,255,.55)}.chispa b{color:#fff}.chispa b span{color:var(--c)}.chispa small{display:block;color:#a8f7df}.float{position:fixed;right:18px;bottom:18px;z-index:8}.float .btn{padding:13px 16px;border-radius:999px}@media(max-width:980px){.hero-grid,.map-grid{grid-template-columns:1fr}.quick-grid,.grid{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr}.places{grid-template-columns:1fr}.links{display:none;position:absolute;left:16px;right:16px;top:82px;background:#fff6e5;border:1px solid var(--line);box-shadow:var(--sh);border-radius:18px;padding:12px;flex-direction:column}.links.open{display:flex}.menu{display:block}.tools{grid-template-columns:1fr}}@media(max-width:640px){.wrap{width:min(100% - 22px,1180px)}.brand small{display:none}.hero-grid{padding:48px 0}.actions .btn{width:100%}.feria{letter-spacing:.24em}.poster{min-height:320px}.quick-grid,.grid{grid-template-columns:1fr}.event{grid-template-columns:1fr}.map{min-height:320px}.float{display:none}.chispa{width:100%}}
+</style></head>
 <body>
-  <a class="skip" href="#ruta">Saltar a la ruta</a>
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="#inicio" aria-label="Inicio Ruta de Manjares">
-        <span class="crest">♛</span>
-        <span>Feria Renacentista<br><small>Tarazona</small></span>
-      </a>
-      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">Menú</button>
-      <nav class="links" id="navLinks" aria-label="Navegación principal">
-        <a href="#programa">Programa</a>
-        <a href="#ruta">Ruta de Manjares</a>
-        <a href="#visita">Cómo llegar</a>
-        <a href="#planifica">Planifica tu visita</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="inicio">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="kicker">10 de mayo · sábado</span>
-          <h1>Ruta de Manjares de la Coronación de Carlos V</h1>
-          <p class="lead">Sabores históricos para vivir Tarazona como en el siglo XVI.</p>
-          <p class="sublead">Bares, restaurantes, carnicerías y comercios de la ciudad se suman a la Feria Renacentista con tapas, menús y especialidades inspiradas en la coronación imperial.</p>
-          <div class="actions">
-            <a class="btn primary" href="#ruta">🍷 Ver la ruta</a>
-            <a class="btn secondary" href="#programa">📜 Consultar programa</a>
-          </div>
-        </div>
-        <div class="portrait" aria-label="Ilustración renacentista de Carlos V">
-          <div class="tower">TARAZONA</div>
-          <div class="king" aria-hidden="true">
-            <svg viewBox="0 0 420 520" role="img" aria-label="Carlos V ilustrado">
-              <defs>
-                <linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f7ddb1"/><stop offset=".45" stop-color="#8b5d2a"/><stop offset="1" stop-color="#3a160e"/></linearGradient>
-                <linearGradient id="r" x1="0" x2="1"><stop offset="0" stop-color="#3f0d0a"/><stop offset="1" stop-color="#8e251d"/></linearGradient>
-              </defs>
-              <path d="M136 120c-8-54 30-90 83-90 55 0 88 38 82 92 28 16 48 51 46 97-2 68-42 106-42 164H96c0-57-39-96-40-164-.8-48 19-83 80-99Z" fill="#dfc08b" stroke="#5a2a16" stroke-width="5"/>
-              <path d="M118 116c52-34 145-35 190 0 6 11 1 24-16 28-45 10-108 11-160 1-21-4-28-17-14-29Z" fill="url(#r)" stroke="#2e0b08" stroke-width="6"/>
-              <path d="M130 113c3-28 23-44 52-52 38-11 77-4 108 22 14 12 20 25 20 40-53 18-132 18-180-10Z" fill="#26201a" stroke="#6f4b25" stroke-width="4"/>
-              <circle cx="213" cy="158" r="67" fill="#e6c793" stroke="#59311f" stroke-width="5"/>
-              <path d="M166 156c20-10 44-12 61 2 10 8 27 12 46 6-4 45-26 72-63 72-34 0-55-23-44-80Z" fill="#e9ca97"/>
-              <path d="M159 171c-7 31 7 64 37 77 13 6 34 8 52-3 29-17 39-50 30-82 14 21 19 55 1 86-17 30-42 46-70 46-28 0-54-16-70-47-15-29-7-57 20-77Z" fill="#4b2a1a" opacity=".95"/>
-              <path d="M151 244c36 49 82 60 132 3 12 26 17 55 15 89H134c-2-36 3-67 17-92Z" fill="#4b140f" stroke="#2f0907" stroke-width="5"/>
-              <path d="M107 382c22-66 63-98 108-98s90 33 112 98c16 47 18 90 12 117H96c-8-33-6-73 11-117Z" fill="url(#g)" stroke="#4c1d0f" stroke-width="6"/>
-              <path d="M126 380c42 18 76 24 91 24 24 0 62-10 92-27" fill="none" stroke="#2b0b08" stroke-width="9" opacity=".55"/>
-              <path d="M175 304c22 24 53 24 78 0l-11 130h-56l-11-130Z" fill="#f5e1b9" stroke="#7b4d24" stroke-width="4"/>
-              <circle cx="195" cy="176" r="4" fill="#2b130d"/><circle cx="239" cy="176" r="4" fill="#2b130d"/>
-              <path d="M199 203c15 8 31 7 43-1" fill="none" stroke="#6d2f1c" stroke-width="4" stroke-linecap="round"/>
-              <path d="M174 140c38-14 78-14 112-1" fill="none" stroke="#3a1d12" stroke-width="6" stroke-linecap="round"/>
-              <path d="M204 93l12-30 12 30 31-9-16 27 28 17-33 2 1 34-24-22-24 22 1-34-33-2 28-17-16-27 33 9Z" fill="#c79a3a" stroke="#5f3417" stroke-width="4"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="wrap info-band">
-      <div class="info-content">
-        <strong>Mercado renacentista</strong>
-        <span>Paseo de la Constitución y aledaños · Música itinerante durante toda la jornada · Teatralizaciones del Grupo de Teatro “La ciudad no es para mí”.</span>
-      </div>
-    </div>
-
-    <section id="programa">
-      <div class="wrap">
-        <div class="section-title">
-          <div class="orn">✦ ✦ ✦</div>
-          <h2>Programa destacado</h2>
-          <p>Una jornada para combinar mercado, recreación histórica, torneo, música y juegos infantiles.</p>
-        </div>
-        <div class="timeline">
-          <article class="time-card"><span class="time">11:00 h</span><span class="icon">🏰</span><p>Apertura del Mercado Renacentista.</p></article>
-          <article class="time-card"><span class="time">12:00 h</span><span class="icon">🌳</span><p>Parque de la Margen Izquierda.</p></article>
-          <article class="time-card"><span class="time">12:00 h</span><span class="icon">🛡️</span><p>Vestir a un caballero del siglo XVI con recreación histórica.</p></article>
-          <article class="time-card"><span class="time">12:00 h</span><span class="icon">⚔️</span><p>Preparación de caballeros para el torneo.</p></article>
-          <article class="time-card"><span class="time">12:00 h</span><span class="icon">👑</span><p>Torneo en honor a Su Majestad Imperial Carlos V.</p></article>
-          <article class="time-card"><span class="time">19:00 h</span><span class="icon">🎶</span><p>Animación especial del mercado con música.</p></article>
-          <article class="time-card"><span class="time">19:00 – 20:30 h</span><span class="icon">🧒</span><p>Virgen del Río: zona infantil y juegos infantiles de época.</p></article>
-          <article class="time-card"><span class="time">21:00 h</span><span class="icon">🏮</span><p>Cierre del Mercado.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="ruta">
-      <div class="wrap">
-        <div class="section-title">
-          <div class="orn">🍞 ✦ 🍷 ✦ 🍖</div>
-          <h2>Ruta de Manjares</h2>
-          <p>Elige tu parada, descubre cada propuesta y deja que la ciudad se saboree como una fiesta imperial.</p>
-        </div>
-        <div class="controls" aria-label="Filtros de la ruta">
-          <button class="chip active" data-filter="all">Todo</button>
-          <button class="chip" data-filter="bar">Bares</button>
-          <button class="chip" data-filter="restaurante">Restaurantes</button>
-          <button class="chip" data-filter="carniceria">Carnicerías</button>
-          <button class="chip" data-filter="comercio">Comercios</button>
-        </div>
-        <div class="grid" id="dishGrid">
-          <article class="dish-card" data-type="bar"><div class="dish-top"><span class="dish-mark">♕</span><h3>Bar Amadeo</h3></div><p>Pincho Bolonia.</p><span class="tag">Bar</span></article>
-          <article class="dish-card" data-type="bar"><div class="dish-top"><span class="dish-mark">🍷</span><h3>Bar Lancis</h3></div><p>Aperitivo del Emperador.</p><span class="tag">Bar</span></article>
-          <article class="dish-card" data-type="bar"><div class="dish-top"><span class="dish-mark">🌿</span><h3>Bar Nature</h3></div><p>Arepas de Da Vinci.</p><span class="tag">Bar</span></article>
-          <article class="dish-card" data-type="bar"><div class="dish-top"><span class="dish-mark">✦</span><h3>Bar Travesía</h3></div><p>Bombones de foie de Isabel de Portugal.</p><span class="tag">Bar</span></article>
-          <article class="dish-card" data-type="bar"><div class="dish-top"><span class="dish-mark">⚜</span><h3>Bar Visconti</h3></div><p>Capricho del Soberano.</p><span class="tag">Bar</span></article>
-          <article class="dish-card" data-type="restaurante"><div class="dish-top"><span class="dish-mark">👑</span><h3>La Merced de la Concordia</h3></div><p>Menú de Felipe el Hermoso.</p><span class="tag">Restaurante</span></article>
-          <article class="dish-card" data-type="restaurante"><div class="dish-top"><span class="dish-mark">🍕</span><h3>Pizzería Vaticano</h3></div><p>Pizza de Carne de San Bavón.</p><span class="tag">Restaurante</span></article>
-          <article class="dish-card" data-type="restaurante"><div class="dish-top"><span class="dish-mark">⛵</span><h3>Restaurante El Galeón</h3></div><p>Viandas Ópera Marina.</p><span class="tag">Restaurante</span></article>
-          <article class="dish-card" data-type="restaurante"><div class="dish-top"><span class="dish-mark">🍲</span><h3>Restaurante Saboya 21</h3></div><p>Alubias rojas con boletus de los bosques del Archiduque.</p><span class="tag">Restaurante</span></article>
-          <article class="dish-card" data-type="restaurante"><div class="dish-top"><span class="dish-mark">🥟</span><h3>S’Ha Feito La Taberna del Herrerín</h3></div><p>Empanadilla de carne picante del Sacro Imperio.</p><span class="tag">Restaurante</span></article>
-          <article class="dish-card" data-type="carniceria"><div class="dish-top"><span class="dish-mark">🍖</span><h3>Carnicería Izquierdo</h3></div><p>Cazuela de migas imperial y ternasco al chilindrón aragonés.</p><span class="tag">Carnicería</span></article>
-          <article class="dish-card" data-type="carniceria"><div class="dish-top"><span class="dish-mark">🔔</span><h3>Carnicería La Moncaína</h3></div><p>Sonajero Imperial.</p><span class="tag">Carnicería</span></article>
-          <article class="dish-card" data-type="carniceria"><div class="dish-top"><span class="dish-mark">👑</span><h3>Carnicería San Agustín</h3></div><p>Pincho Coronación.</p><span class="tag">Carnicería</span></article>
-          <article class="dish-card" data-type="bar"><div class="dish-top"><span class="dish-mark">🕊️</span><h3>La Bodega</h3></div><p>Codornices del Banquete Real.</p><span class="tag">Bar</span></article>
-          <article class="dish-card" data-type="comercio"><div class="dish-top"><span class="dish-mark">🍓</span><h3>Maison Fruta</h3></div><p>Cestilla de frutos y suspiros de los jardines de Yuste.</p><span class="tag">Comercio</span></article>
-          <article class="dish-card" data-type="comercio"><div class="dish-top"><span class="dish-mark">🥩</span><h3>Spar Javier Brocate</h3></div><p>Jamón de Corte del Renacer.</p><span class="tag">Comercio</span></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="visita">
-      <div class="wrap">
-        <div class="section-title">
-          <div class="orn">✦ ✦ ✦</div>
-          <h2>Planifica tu visita</h2>
-          <p>La ruta gastronómica se disfruta mejor combinando paseo, mercado y paradas sin prisa.</p>
-        </div>
-        <div class="visit">
-          <article class="visit-card"><h3>📍 Zona principal</h3><p>Mercado Renacentista en Paseo de la Constitución y aledaños.</p></article>
-          <article class="visit-card"><h3>🎭 Ambiente</h3><p>Música itinerante, teatralizaciones y recreaciones históricas durante la jornada.</p></article>
-          <article class="visit-card"><h3>👨‍👩‍👧 Familias</h3><p>Zona infantil en Virgen del Río de 19:00 a 20:30 h con juegos de época.</p></article>
-          <div class="mapbox">
-            <div>
-              <h3>Tarazona se vive caminando</h3>
-              <p>Empieza por el mercado, elige varios manjares y reserva la tarde para la animación especial y los juegos infantiles.</p>
-              <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Paseo%20de%20la%20Constituci%C3%B3n%2C%20Tarazona" target="_blank" rel="noopener">Abrir ubicación principal</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta" id="planifica">
-      <div class="wrap cta-box">
-        <div class="seal-mini">V</div>
-        <h2>Vive la Coronación con todos los sentidos</h2>
-        <p>Historia, mercado, música, juegos y gastronomía local en una jornada pensada para pasear, probar y compartir.</p>
-        <div class="actions" style="justify-content:center">
-          <a class="btn primary" href="#ruta">Empezar por los manjares</a>
-          <a class="btn secondary" href="#programa">Ver horarios</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <div class="floating"><a class="btn primary" href="#ruta">🍽️ Ruta</a></div>
-
-  <footer>
-    <div class="wrap foot">
-      <div><strong>Feria Renacentista de Tarazona</strong><br><small>Ruta de Manjares · Coronación de Carlos V · 10 de mayo</small></div>
-      <a class="toplink" href="#inicio">Volver arriba ↑</a>
-    </div>
-  </footer>
-
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
-    menuBtn?.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-
-    const chips = document.querySelectorAll('.chip');
-    const cards = document.querySelectorAll('.dish-card');
-    chips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        chips.forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        const filter = chip.dataset.filter;
-        cards.forEach(card => {
-          const show = filter === 'all' || card.dataset.type === filter;
-          card.style.display = show ? '' : 'none';
-        });
-      });
-    });
-  </script>
-</body>
-</html>
+<header><div class="wrap nav"><a class="brand" href="#inicio"><span class="crest">♛</span><span>Feria Renacentista<small>Tarazona · 2026</small></span></a><button class="menu" id="menuBtn">Menú</button><nav class="links" id="navLinks"><a href="#programa">Programa</a><a href="#ruta">Manjares</a><a href="#plano">Plano</a><a href="#visitas">Visitas</a><a href="#info">Info útil</a></nav></div></header>
+<main id="inicio">
+<section class="hero"><div class="wrap hero-grid"><div><span class="eyebrow">9 y 10 mayo 2026 · Tarazona</span><div class="feria">FERIA</div><div class="rena">Renacentista</div><h1>Ruta de Manjares de Época y Coronación de Carlos V</h1><p>Mercado renacentista, cabalgata imperial, juegos infantiles, torneos, justas, luz y sonido, rutas teatralizadas y una selección gastronómica inspirada en el siglo XVI.</p><div class="actions"><a class="btn primary" href="#ruta">🍷 Ver Ruta de Manjares</a><a class="btn secondary" href="#programa">📜 Ver programa completo</a></div></div><aside class="poster"><div class="poster-top">Jornadas de la Coronación del Emperador</div><div class="seal"><div><b>V</b><br>CAROLVS</div></div><div class="poster-list"><span><i></i>Ruta de Manjares de Época</span><span><i></i>Mercado Renacentista y zona gastro</span><span><i></i>Cabalgata Imperial “El Paso Imperial”</span><span><i></i>Video-mapping “Renace el friso”</span></div></aside></div></section>
+<div class="wrap quick"><div class="quick-grid"><article class="q"><strong>📍 Mercado</strong><span>Paseo de la Constitución y aledaños durante toda la jornada.</span></article><article class="q"><strong>👑 Cabalgata</strong><span>9 de mayo, 20:00 h, salida desde Palacio de Eguarás.</span></article><article class="q"><strong>🍽️ Manjares</strong><span>16 propuestas de bares, restaurantes, carnicerías y comercios.</span></article><article class="q"><strong>🎟️ Visitas</strong><span>Rutas gratuitas con reserva previa en Tarazona Monumental.</span></article></div></div>
+<section><div class="wrap band"><strong>Mercado renacentista</strong><br><span>Paseo de la Constitución y aledaños · Música itinerante a cargo de Gaiteros de Tarazona · Teatralizaciones del Grupo de Teatro “La ciudad no es para mí”.</span></div></section>
+<section id="programa"><div class="wrap"><div class="title"><div class="orn">✦ ✦ ✦</div><h2>Programa principal</h2><p>Selecciona el día para ver los actos destacados de la Feria Renacentista y de las Jornadas de la Coronación.</p></div><div class="tabs"><button class="tab active" data-day="9">9 de mayo</button><button class="tab" data-day="10">10 de mayo</button></div><div class="panel"><div class="program" id="programList"></div></div></div></section>
+<section id="plano"><div class="wrap"><div class="title"><div class="orn">✦ ✦ ✦</div><h2>Plano vivo de la fiesta</h2><p>Ocho puntos clave para orientarte entre mercado, cabalgata, friso, zona infantil, zona gastro y campamento histórico.</p></div><div class="map-grid"><div class="map"><span class="street s1"></span><span class="street s2"></span><span class="street s3"></span><span class="pin p1"><b>1</b></span><span class="pin p2"><b>2</b></span><span class="pin p3"><b>3</b></span><span class="pin p4"><b>4</b></span><span class="pin p5"><b>5</b></span><span class="pin p6"><b>6</b></span><span class="pin p7"><b>7</b></span><span class="pin p8"><b>8</b></span></div><div class="places" id="placesList"></div></div></div></section>
+<section id="ruta"><div class="wrap"><div class="title"><div class="orn">🍞 ✦ 🍷 ✦ 🍖</div><h2>Ruta de Manjares</h2><p>Busca por establecimiento o filtra por tipo. Una ruta para probar Tarazona con aire imperial.</p></div><div class="tools"><input class="search" id="search" placeholder="Buscar: Amadeo, ternasco, bombones, pizza..."><div class="chips"><button class="chip active" data-filter="all">Todo</button><button class="chip" data-filter="bar">Bares</button><button class="chip" data-filter="restaurante">Restaurantes</button><button class="chip" data-filter="carniceria">Carnicerías</button><button class="chip" data-filter="comercio">Comercios</button></div></div><div class="grid" id="dishGrid"></div><div class="empty" id="empty">No hay resultados con ese filtro o búsqueda.</div></div></section>
+<section id="visitas"><div class="wrap"><div class="title"><div class="orn">✦ ✦ ✦</div><h2>Jornadas, visitas y rutas</h2><p>Conferencias divulgativas y visitas gratuitas vinculadas a la Coronación.</p></div><div class="cards"><article class="card"><h3>Jornadas divulgativas</h3><ul><li><strong>29 abril · 19:00 h:</strong> El Renacimiento: un gran siglo para las artes en la catedral de Tarazona. D. Jesús Criado Mainar.</li><li><strong>30 abril · 19:00 h:</strong> De Gante a Bolonia: la música que acompañó a Carlos V hacia su coronación. D. Alberto Cebolla Royo.</li><li><strong>7 mayo · 19:00 h:</strong> La iglesia en el Renacimiento y la catedral de Tarazona. D. Miguel Antonio Franco Garza.</li></ul></article><article class="card"><h3>Visitas de la Coronación</h3><ul><li><strong>9 y 10 mayo · 12:00 h:</strong> Ruta Renacentista Teatralizada. Encuentro en Plaza de la Seo.</li><li><strong>13:00 h:</strong> Visita Teatralizada al Palacio Episcopal.</li><li><strong>17:00 h:</strong> Visita Temática sobre el Renacimiento en la Catedral de Tarazona.</li></ul></article><article class="card"><h3>Reserva previa</h3><p>Todas las visitas duran una hora y son gratuitas, pero requieren reserva previa.</p><p><strong>Email:</strong> catedral@tarazonamonumental.es</p><p><strong>Teléfonos:</strong> 976 641 789 / 627 384 019</p></article></div></div></section>
+<section id="info"><div class="wrap"><div class="title"><div class="orn">✦ ✦ ✦</div><h2>Información útil</h2><p>Una guía rápida para aprovechar la jornada sin perderse los momentos clave.</p></div><div class="cards"><article class="card"><h3>Mejor recorrido</h3><p>Empieza por el mercado, localiza la zona gastro y combina la Ruta de Manjares con Plaza de España, Virgen del Río y Parque de la Margen Izquierda.</p></article><article class="card"><h3>Para familias</h3><p>La zona infantil se concentra en Virgen del Río, con juegos infantiles de época en varias franjas horarias.</p></article><article class="card"><h3>Ubicación principal</h3><p>Paseo de la Constitución y aledaños, Tarazona.</p><p><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Paseo%20de%20la%20Constituci%C3%B3n%2C%20Tarazona" target="_blank" rel="noopener">Abrir en Google Maps</a></p></article></div></div></section>
+<section class="cta"><div class="wrap cta-box"><h2>Vive Tarazona como en el siglo XVI</h2><p>Una ruta para caminar, mirar, escuchar y probar. Historia local, recreación y gastronomía en una misma experiencia.</p><div class="actions" style="justify-content:center"><a class="btn primary" href="#ruta">Empezar por los manjares</a><a class="btn secondary" href="#programa">Ver horarios</a></div></div></section>
+</main><div class="float"><a class="btn primary" href="#ruta">🍽️ Ruta</a></div>
+<footer><div class="wrap foot"><div><strong>Feria Renacentista de Tarazona 2026</strong><br><small>Ruta de Manjares · Coronación de Carlos V · 9 y 10 mayo</small></div><div class="chispa"><span class="spark"></span><span><b>Educando con ch<span>I</span>sp<span>A</span></b><small>La tecnología ayuda, pero la chIspA la pones tú.</small></span></div><a class="btn secondary" href="#inicio">Volver arriba ↑</a></div></footer>
+<script>
+const program={
+'9':[['09:30 h','Plaza de la Seo','“La cadiera”, programa de Aragón Radio en directo. Especial Jornadas de la Coronación.'],['10:45 h','Turiaso y el César','Del convento al campamento. Recorrido por Santa Ana, San Antón, Plaza de la Seo, Fueros de Aragón, Moreno Pérez Caballero y Parque de la Margen Izquierda.'],['11:00 h','Apertura del Mercado Renacentista','Paseo de la Constitución y aledaños.'],['11:00 h','Campamento histórico','Parque de la Margen Izquierda. Recreación de campamento y exposición de elementos de época.'],['11:30 h','Instrucción de caballeros','Recreación histórica con explicación en Parque de la Margen Izquierda.'],['12:00 – 13:30 h','Juegos infantiles de época','Virgen del Río. Zona Infantil.'],['18:00 – 19:30 h','Juegos infantiles de época','Virgen del Río. Zona Infantil.'],['Desde 19:00 h','Animación especial del Mercado','Música y ambiente itinerante.'],['19:00 h','Recreación histórica','Plaza de la Seo. Demostración de indumentaria, formación y estrategia de época.'],['19:15 h','Recepción de participantes','Palacio de Eguarás. Recepción de la Cabalgata Imperial.'],['20:00 h','Cabalgata de la Coronación “El Paso Imperial”','Salida desde Palacio de Eguarás. Participan asociaciones, grupos de danza, recreación histórica, Gaiteros de Tarazona, Alam Folk y el grupo de teatro “La ciudad no es para mí”.','feature'],['22:30 h','Video-mapping “Renace el friso: La luz de Carlos V”','Plaza de España, Casa Consistorial. Primer pase.'],['22:45 h','Danza Renacentista','Puerta del Cierzo de Borja con Alam Folk.'],['23:00 h','Segundo pase del video-mapping','“Renace el friso: La luz de Carlos V”.'],['23:15 h','Danza Palaciega del siglo XVI','Grupo de danzas “Danzaria” de Utebo.'],['23:30 h','Representación “Bolonia 1534 – Tarazona 2026, La Coronación”','Plaza de España. A cargo del grupo teatral “La ciudad no es para mí”. Final con luces, música y último pase de video-mapping.','feature']],
+'10':[['11:00 h','Apertura del Mercado Renacentista','Paseo de la Constitución y aledaños.'],['12:00 h','Parque de la Margen Izquierda','Vestir a un caballero del siglo XVI con recreación histórica y demostración.'],['12:00 h','Preparación de caballeros','Preparación de caballeros para el torneo.'],['12:00 h','Torneo en honor a Carlos V','A cargo de Jousting Iberia, con la presencia de Su Majestad Imperial y el Papa.','feature'],['Desde 19:00 h','Animación especial del Mercado','Música en el mercado renacentista.'],['19:00 – 20:30 h','Juegos infantiles de época','Virgen del Río. Zona Infantil.'],['21:00 h','Cierre del Mercado','Fin de la jornada.']]};
+const places=[['1','Plaza España','Friso de Carlos V en el Ayuntamiento.'],['2','Plaza España','Representación de la Coronación de Carlos V, espectáculos, danzas y luces.'],['3','Paseo de la Constitución','Mercado Renacentista y aledaños.'],['4','Virgen del Río','Zona Infantil.'],['5','Palacio de Eguarás','Salida y llegada de la Cabalgata de la Coronación.'],['6','Bajos de Palacio','Exposición sobre el Friso.'],['7','Virgen del Río','Zona Gastro.'],['8','Parque de la Margen Izquierda','Campamento histórico y Torneo.']];
+const dishes=[['bar','♕','Bar Amadeo','Pincho Bolonia.'],['bar','🍷','Bar Lancis','Aperitivo del Emperador.'],['bar','🌿','Bar Nature','Arepas de Da Vinci.'],['bar','✦','Bar Travesía','Bombones de foie de Isabel de Portugal.'],['bar','⚜','Bar Visconti','Capricho del Soberano.'],['restaurante','👑','La Merced de la Concordia','Menú de Felipe el Hermoso.'],['restaurante','🍕','Pizzería Vaticano','Pizza de Carne de San Bavón.'],['restaurante','⛵','Restaurante El Galeón','Viandas Ópera Marina.'],['restaurante','🍲','Restaurante Saboya 21','Alubias rojas con boletus de los bosques del Archiduque.'],['restaurante','🥟','S’Ha Feito La Taberna del Herrerín','Empanadilla de carne picante del Sacro Imperio.'],['carniceria','🍖','Carnicería Izquierdo','Cazuela de migas imperial y ternasco al chilindrón aragonés.'],['carniceria','🔔','Carnicería La Moncaína','Sonajero Imperial.'],['carniceria','👑','Carnicería San Agustín','Pincho Coronación.'],['bar','🕊️','La Bodega','Codornices del Banquete Real.'],['comercio','🍓','Maison Fruta','Cestilla de frutos y suspiros de los jardines de Yuste.'],['comercio','🥩','Spar Javier Brocate','Jamón de Corte del Renacer.']];
+document.getElementById('menuBtn').onclick=()=>document.getElementById('navLinks').classList.toggle('open');document.querySelectorAll('#navLinks a').forEach(a=>a.onclick=()=>document.getElementById('navLinks').classList.remove('open'));
+const list=document.getElementById('programList');function renderProgram(day){list.innerHTML=program[day].map(([h,t,p,f])=>`<article class="event ${f||''}"><div class="hour">${h}</div><div><h3>${t}</h3><p>${p}</p></div></article>`).join('')}document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));t.classList.add('active');renderProgram(t.dataset.day)});renderProgram('9');
+document.getElementById('placesList').innerHTML=places.map(([n,t,d])=>`<article class="place"><span class="num">${n}</span><div><h3>${t}</h3><p>${d}</p></div></article>`).join('');
+const labels={bar:'Bar',restaurante:'Restaurante',carniceria:'Carnicería',comercio:'Comercio'};let filter='all',query='';const grid=document.getElementById('dishGrid'),empty=document.getElementById('empty');function renderDishes(){const q=query.trim().toLowerCase();const visible=dishes.filter(d=>(filter==='all'||d[0]===filter)&&`${d[2]} ${d[3]} ${labels[d[0]]}`.toLowerCase().includes(q));grid.innerHTML=visible.map(([type,icon,name,text])=>`<article class="dish"><div class="topdish"><span class="mark">${icon}</span><h3>${name}</h3></div><p>${text}</p><em>${labels[type]}</em></article>`).join('');empty.style.display=visible.length?'none':'block'}document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));c.classList.add('active');filter=c.dataset.filter;renderDishes()});document.getElementById('search').oninput=e=>{query=e.target.value;renderDishes()};renderDishes();
+</script></body></html>
